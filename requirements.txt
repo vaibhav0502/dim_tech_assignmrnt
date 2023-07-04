@@ -1,0 +1,6 @@
+camelot-py
+fitz
+ghostscript
+numpy
+pandas
+PyMuPDF
