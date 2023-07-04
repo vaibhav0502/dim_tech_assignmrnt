@@ -116,6 +116,7 @@ def get_doc_data(pdf_path):
 
             # get table data using camelot and add it to output json (text_data)
             text_data, tables = add_tables_to_output(pdf_path, h, pp, text_data)
+            tables = []
 
             for block in page.get_text("dict")["blocks"]:
                 if "image" in block.keys():
@@ -142,13 +143,13 @@ def get_doc_data(pdf_path):
 
             # sort data as per top
             d = text_data['page_0']['data']
-            text_data['page_0']['data'] = sorted(d, key=lambda d: d['bbox'][1])
+            text_data['page_0']['data'] = sorted(d, key=lambda d: (d['bbox'][1], d['bbox'][3]))
     except Exception as e:
         print("Exception in get_doc_data", e)
     return text_data
 
 
-pdf_path = "/content/drive/MyDrive/Colab Notebooks/dimensionless/table.pdf"
+pdf_path = "pdfs/chapter.pdf"
 output_json = get_doc_data(pdf_path)
 
 
@@ -164,3 +165,5 @@ no = 0
 tables = [d['data'] for d in output_json[f'page_{no}']['data'] if d['type'] == 'table']
 if tables:
     print(tables[0])
+else:
+    print("no tables")
