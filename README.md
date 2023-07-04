@@ -1,6 +1,6 @@
 # NLP Assignment
 
-- INSTALL python 3.8
+- INSTALL Python 3.8
 
 ```
 sudo apt update
@@ -10,7 +10,7 @@ sudo apt install python3.8
 sudo apt-get install python3.8-venv
 ```
 
-- Create a Virtual Environment outside Project folder
+- Create a Virtual Environment outside the Project folder
 
 ```python3.8 -m venv tasks```
 
@@ -19,7 +19,7 @@ sudo apt-get install python3.8-venv
 ```source tasks/bin/activate(Linux)```
 
 
-- Install required python libraries.
+- Install required Python libraries.
 
 ```
 pip install -r requirements.txt
@@ -27,3 +27,13 @@ pip install -r requirements.txt
 apt-get install build-essential
 apt install ghostscript python3-tk
 ```
+
+
+## Task 1
+
+- Download the publicly available reports and extract the contents out of it.  
+- I have used `Fitz` to get text data and `Camelot` to get tabular data
+- Final output will be a dictionary containing text and table data for each page
+- Pass pdf_file path to function `get_doc_data` it will return output_json
+
+
