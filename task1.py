@@ -1,6 +1,12 @@
 import fitz
 import camelot
 
+import pdfplumber
+import nltk
+from nltk.tokenize import sent_tokenize
+nltk.download('punkt')
+
+
 def read_table_using_camelot(pdf_path, page_no):
     '''
     Function to read pdf and return tables
@@ -167,3 +173,21 @@ if tables:
     print(tables[0])
 else:
     print("no tables")
+
+
+## Get sentence data
+def get_page_data(pdf, page_no):
+    page = pdf.pages[page_no]
+    text = page.extract_text()
+    sentences = sent_tokenize(text)
+    return sentences
+
+
+pdf = pdfplumber.open(pdf_path)
+
+page_no = 4
+sentences = get_page_data(pdf, page_no)
+for each in sentences:
+  print(each)
+  print("---"*20)
+
