@@ -37,4 +37,6 @@ apt install ghostscript python3-tk
 - Run `task1.py` or you can see the output in `task1.ipynb`
 - Pass pdf_file path to function `get_doc_data` it will return output_json
 
-
+## Task 2 and 4
+- I have used a transformer pipeline to get NER and a summary of text
+- You can directly run the `task_2_4.ipynb` for that on colab
