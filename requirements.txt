@@ -1,8 +1,0 @@
-camelot-py
-fitz
-ghostscript
-nltk
-numpy
-pandas
-pdfplumber
-PyMuPDF
